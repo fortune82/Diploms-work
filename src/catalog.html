@@ -1,0 +1,92 @@
+@@include('components/page/_1_head.html')
+
+<body>
+    @@include('components/page/_2_header.html')
+    <section>
+        <div>
+            <button class="menuFilterChooseClock">
+                <!-- <span></span>
+                <span></span>
+                <span></span> -->
+                <span>Фильтр</span>
+            </button>
+            <!-- <p class="filterP">Выбор по категориям:</p> -->
+            <aside class='filterChooseClock'>
+                <div class="choose">
+                    <input type="button" value="Выбрать бренд" class="brendsBtn ">
+                    <div class="backFilter">&times;</div>
+                    <nav class='brends'>
+
+                        <ul>
+                            <li><input type="checkbox" class="inpBrend" id="Atlantic"><label
+                                    for="Atlantic">Atlantic</label>
+                            </li>
+                            <li><input type="checkbox" class="inpBrend" id="Diesiel"><label for="Diesiel">Diesel</label>
+                            </li>
+                            <li><input type="checkbox" class="inpBrend" id="Orient"><label for="Orient">Orient</label>
+                            </li>
+                            <li><input type="checkbox" class="inpBrend" id="Daniel-Wellington"><label
+                                    for="Daniel-Wellington">Daniel
+                                    Wellington</label></li>
+                            <li><input type="checkbox" class="inpBrend" id="Tissot"><label for="Tissot">Tissot</label>
+                            </li>
+                            <li><input type="checkbox" class="inpBrend" id="Rado"><label for="Rado">Rado</label></li>
+                            <li><input type="checkbox" class="inpBrend" id="Calypso"><label
+                                    for="Calypso">Calypso</label>
+                            </li>
+                            <li><input type="checkbox" class="inpBrend" id="Cluse"><label for="Cluse">Cluse</label></li>
+                            <li><input type="checkbox" class="inpBrend" id="Epos"><label for="Epos">Epos</label></li>
+                            <li><input type="checkbox" class="inpBrend" id="Longines"><label
+                                    for="Longines">Longines</label>
+                            </li>
+                            <li><input type="checkbox" class="inpBrend" id="Skagen"><label for="Skagen">Skagen</label>
+                            </li>
+                            <li><input type="checkbox" class="inpBrend" id="Casio"><label for="Casio">Casio</label></li>
+                        </ul>
+                    </nav>
+
+                    <p><input type="checkbox" id="#manClock" class="inpClock"><label for="#manClock">Мужские</label></p>
+                    <p><input type="checkbox" id="#womanClock" class="inpClock"><label for="#womanClock">Женские</label>
+                    </p>
+                    <p><input type="checkbox" id="#childrenClock" class="inpClock"><label
+                            for="#childrenClock">Детские</label></p>
+                    <!-- <p><input type="text" id="priceClock">По цене</p> -->
+
+                    <div class="inputPrice">
+                        <p>Max. цена </p>
+                        <input type="range" step='1000' min='0' max='100100' value='1000' id="priceClock"
+                            class="priceClock">
+                        <div><span class='valueRangeOut'>0 </span><span>&#160;грн.</span></div>
+                    </div>
+
+                    <button>Выбрать</button>
+                    <button class="sortMin">Сортировать &uarr;</button>
+                    <button class="sortMax">Сортировать &darr; </button>
+                    <button class="resetChoose">Сбросить</button>
+                    <!-- <input type="text" name="" id=""> -->
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <section>
+        <div class="newItems">
+            <div class="title">
+                <h2>Каталог часов</h2>
+                <div></div>
+            </div>
+
+            <!--sseason__clock-description2 создан для добавления новых карточек при ajax запросе (после этого блока будут добавляться новые, а весь блок при нажатии на кнопку будет перезаписываться для того, чтоб убирать старые карточки)-->
+            <div class="season__clock-description2"></div>
+            <div class="newItems__clock">
+
+                <!-- <button>Смотреть все</button> -->
+            </div>
+        </div>
+
+    </section>
+    @@include('components/page/_3_footer.html')
+    @@include('components/page/_4_scripts.html')
+</body>
+
+</html>

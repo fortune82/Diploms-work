@@ -1,0 +1,225 @@
+@@include('components/page/_1_head.html')
+
+<body>
+	@@include('components/page/_2_header.html')
+	@@include('components/page/_5_registration.html')
+	@@include('components/page/_6_mailing.html')
+
+	<section>
+		<div class="main">
+			<div class="main__logo">
+				<div class="main__logo-text">
+					<h1>porten</h1>
+					<p>санкт-петербург</p>
+				</div>
+			</div>
+			<div class="main__tagline">
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus maxime saepe tempora quis
+					reiciendis vero autem unde blanditiis quibusdam quo alias, optio et dolore officiis amet
+					fugiat
+					corrupti deserunt maiores.
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus maxime saepe tempora quis
+					reiciendis vero autem unde blanditiis quibusdam quo alias, optio et dolore officiis amet
+					fugiat
+					corrupti deserunt maiores.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="season">
+			<div class="season__clock">
+				<div class="title">
+					<h2><span>сезон</span> 2020/21</h2>
+					<div></div>
+				</div>
+
+				<!-- -----------Карусель------------------------- -->
+
+				<div class="season__clock-model">
+					<div class="season__clock-description slide">
+						<div class="clock">
+							<img src="img/man/ATLANTIC_62450.jpg" alt="clock" data-clock="ATLANTIC_62450.41.61">
+						</div>
+						<p>ATLANTIC_62450.41.61</p>
+						<p>9 900 грн.</p>
+					</div>
+					<div class="season__clock-description slide">
+						<div class="clock">
+							<img src="img/man/ATLANTIC_68351.jpg" alt="clock" data-clock="ATLANTIC_62452.41.63">
+						</div>
+						<p>ATLANTIC_62452.41.63</p>
+						<p>33 900 грн.</p>
+					</div>
+					<div class="season__clock-description slide">
+						<div class="clock">
+							<img src="img/man/DIESEL_DZ1657.jpg" alt="clock" data-clock="DIESEL_DZ1657">
+						</div>
+						<p>DIESEL_DZ1657.jpg</p>
+						<p>7 000 грн.</p>
+					</div>
+
+					<div class="season__clock-description showing">
+						<div class="clock">
+							<img src="img/woman/CLUSE_CL18117.jpg" alt="clock" data-clock="CLUSE_CL18117">
+						</div>
+						<p>CLUSE CL18117</p>
+						<p>71 650 грн.</p>
+					</div>
+					<div class="season__clock-description showing">
+						<div class="clock">
+							<img src="img/woman/DANIEL_WELLINGTON_DW00100161.jpg" alt="clock"
+								data-clock="DANIEL_WELLINGTON_DW00100161">
+						</div>
+						<p>DANIEL WELLINGTON DW00100161</p>
+						<p>5 300 грн.</p>
+					</div>
+					<div class="season__clock-description showing">
+						<div class="clock">
+							<img src="img/woman/SKAGEN_SKW2149.jpg" alt="clock" data-clock="SKAGEN_SKW2149">
+						</div>
+						<p>SKAGEN SKW2149</p>
+						<p>4 740 грн.</p>
+					</div>
+				</div>
+
+			</div>
+			<div class="catalog">
+				<div class="title">
+					<h2>новая коллекция</h2>
+					<div></div>
+					<button class="catalog__button"><a href="catalog.html">каталог</a></button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="collection2018">
+			<div class="collection2018__images"></div>
+			<div class="collection2018__title">
+				<div class="title">
+					<h2>коллекция <span>201</span>8</h2>
+					<div></div>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus maxime saepe tempora
+						quis
+						reiciendis vero autem unde blanditiis quibusdam quo alias, optio et dolore officiis amet
+						fugiat
+						corrupti deserunt maiores.
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus maxime saepe tempora
+						quis
+						reiciendis vero autem unde blanditiis quibusdam quo alias, optio et dolore officiis amet
+						fugiat
+						corrupti deserunt maiores.
+					</p>
+					<button class="collection2018__button">посмотреть коллекцию</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="newItems">
+			<div class="title">
+				<h2>новые поступления</h2>
+				<div></div>
+			</div>
+
+			<!--season__clock-description2 создан для добавления новых карточек при ajax запросе (после этого блока будут добавляться новые, а весь блок при нажатии на кнопку будет перезаписываться для того, чтоб убирать старые карточки)-->
+			<div class="season__clock-description2"></div>
+			<div class="newItems__clock">
+				<div class="season__clock-description">
+					<div class="clock">
+						<img src="img/man/ORIENT_FUNE9008B.jpg" alt="clock" data-clock="ORIENT_FUNE9008B">
+					</div>
+					<p>ORIENT FUNE9008B</p>
+					<p>2 780 грн.</p>
+				</div>
+
+				<div class="season__clock-description">
+					<div class="clock">
+						<img src="img/man/ATLANTIC_62450.jpg" alt="clock" data-clock="ATLANTIC_62450.41.61">
+					</div>
+					<p>ATLANTIC_62450.41.61</p>
+					<p>9 900 грн.</p>
+				</div>
+
+
+				<div class="season__clock-description">
+					<div class="clock">
+						<img src="img/man/TISSOT_T063.jpg" alt="clock" data-clock="TISSOT_T063">
+					</div>
+					<p>TISSOT T063</p>
+					<p>17 590 грн.</p>
+				</div>
+				<div class="season__clock-description">
+					<div class="clock">
+						<img src="img/man/RADO-01.jpg" alt="clock" data-clock="RADO-01.115.0927.3.015">
+					</div>
+					<p>RADO-01.115.0927.3.015</p>
+					<p>7 580 грн.</p>
+				</div>
+				<div class="season__clock-description">
+					<div class="clock">
+						<img src="img/woman/CLUSE_CL18117.jpg" alt="clock" data-clock="CLUSE_CL18117">
+					</div>
+					<p>CLUSE CL18117</p>
+					<p>71 560 грн.</p>
+				</div>
+				<div class="season__clock-description">
+					<div class="clock">
+						<img src="img/woman/SKAGEN_SKW2149.jpg" alt="clock" data-clock="SKAGEN_SKW2149">
+					</div>
+					<p>SKAGEN SKW2149</p>
+					<p>5 300 грн.</p>
+				</div>
+				<div class="season__clock-description">
+					<div class="clock">
+						<img src="img/woman/EPOS_8000.jpg" alt="clock" data-clock="EPOS_8000">
+					</div>
+					<p>EPOS 8000</p>
+					<p>2 300 грн.</p>
+				</div>
+				<div class="season__clock-description">
+					<div class="clock">
+						<img src="img/woman/SKAGEN_SKW2149.jpg" alt="clock" data-clock="SKAGEN_SKW2149">
+					</div>
+					<p>SKAGEN SKW2149</p>
+					<p>25 000 грн.</p>
+				</div>
+				<div class="season__clock-description">
+					<div class="clock">
+						<img src="img/children/CALYPSO_KTV5591.jpg" alt="clock" data-clock="CALYPSO_KTV5591">
+					</div>
+					<p>СALYPSO KTV5591</p>
+					<p>1 202 грн.</p>
+				</div>
+			</div>
+			<button>Смотреть все</button>
+		</div>
+	</section>
+
+	<section>
+		<div class="brends">
+			<div class="title">
+				<h2>наши бренды</h2>
+				<div></div>
+			</div>
+			<div class="brens__name">
+				<img src="img/Rectangle13.png" alt="Coco">
+				<img src="img/Rectangle13.png" alt="Coco">
+				<img src="img/Rectangle13.png" alt="Coco">
+				<img src="img/Rectangle13.png" alt="Coco">
+			</div>
+		</div>
+	</section>
+	<!-- --------------------Всплывающее модальное окно для описания часов -->
+	@@include('components/page/_7_descriptionClocks.html')
+	@@include('components/page/_3_footer.html')
+	@@include('components/page/_4_scripts.html')
+</body>
+
+</html>

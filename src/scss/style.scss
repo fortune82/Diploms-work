@@ -1,0 +1,925 @@
+@import 'mixins';
+@import 'vars';
+@import 'fonts';
+@import 'local-fonts';
+@import 'global';
+@import 'svg';
+@import 'bem-blocks';
+@import 'registration';
+@import 'mailing';
+@import 'catalog';
+@import 'modalClockDescription';
+@import 'personal';
+@import 'personal';
+
+// @import 'media';
+/* NOTE - import here your style modules */
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Post No Bills Jaffna';
+    src: url("../fonts/PostNoBillsJaffna-Bold.woff");
+}
+
+body {
+    color: rgb(149, 147, 147);
+    background-color: rgb(0, 0, 0);
+
+    a {
+        color: rgb(149, 147, 147);
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+}
+
+section,
+header,
+footer {
+    // display: flex;
+    // display: justify-content;
+    margin: 0 auto;
+    // max-width: 1800px;
+
+}
+
+header {
+    // display: flex;
+    // justify-content: center;
+    // flex-direction: column;
+    background-color: rgb(0, 0, 0);
+    font-size: 14px;
+    margin: 0 auto;
+    max-width: 1200px;
+
+    .header {
+        // width: 1100px;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        margin: 0 auto;
+
+    }
+
+    // ---------------кнопка закрытия модального окна меню (при медиа запросе)
+    .back {
+        display: none;
+    }
+
+    // -------------------
+
+    .header__contacts {
+        margin: 0 auto;
+        // max-width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        // align-items: center;
+        // // justify-content: center;
+
+
+
+        div {
+            display: flex;
+            padding: 10px 0;
+
+            p {
+                margin-right: 10px;
+                padding-right: 10px;
+                border-right: 1px solid rgb(149, 147, 147);
+                font-family: 'PT Sans';
+
+                &:nth-child(3) {
+                    border: none;
+                }
+
+            }
+
+        }
+    }
+
+    .header__contacts-autorization {
+        background-color: transparent;
+        color: rgb(149, 147, 147);
+        border: none;
+        cursor: pointer;
+        outline: none;
+
+        &:hover {
+            color: rgb(255, 255, 255);
+        }
+    }
+
+    .header__menu {
+        // width: 1800px;
+        height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 1200px;
+        // background-color: #0F0F0F;
+
+        .header__menu-logo {
+            color: #fff;
+            font-size: 22px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-family: 'Post No Bills Jaffna';
+        }
+
+        nav {
+            display: flex;
+
+            ul {
+                display: flex;
+
+                li {
+                    list-style: none;
+
+                    a {
+                        display: flex;
+                        align-items: center;
+                        height: 90px;
+                        padding: 0 10px;
+
+                        &:hover {
+                            color: #fff;
+                            background-color: rgb(97, 96, 96);
+                        }
+
+                    }
+
+                    .basket,
+                    .lastLi {
+                        padding: 0 20px;
+                    }
+
+                    .basket:hover,
+                    .lastLi:hover {
+                        background-color: #0F0F0F;
+                    }
+                }
+            }
+
+            .search {
+                display: flex;
+                align-items: center;
+            }
+
+            .searchHidden {
+                display: none;
+            }
+
+            .searchInput {
+                display: flex;
+                margin: 0 10px 0 20px;
+                height: 20px;
+                outline: none;
+            }
+
+            .fa-search {
+                &:hover {
+                    color: #fff;
+                    background-color: transparent;
+                }
+            }
+
+            //  --------------------верхнее меню-----------
+            .hide {
+                display: none;
+            }
+        }
+    }
+
+    // ---------------модальное окно меню при медиа запросе----------
+    .mini-menu {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    header {
+        padding: 0 5px;
+
+        div {
+            p {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .search {
+        padding-right: 5px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    header {
+
+        .header__contacts-autorization {
+            padding-right: 5px;
+
+            span {
+                display: none;
+            }
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        // ----------------------верхнее мини меню-----------------
+
+        .mini-menu {
+            display: block;
+            position: fixed;
+            right: 10px;
+            top: 45px;
+            z-index: 151px;
+            width: 24px;
+            height: 13px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .mini-menu span {
+            width: 100%;
+            height: 2px;
+            background: #fff;
+            position: absolute;
+            margin-top: 3px;
+            top: 0;
+            left: 0;
+            transition: .3s;
+        }
+
+        .mini-menu span:first-child {
+            top: 12px;
+        }
+
+        .mini-menu span:last-child {
+            top: 6px;
+        }
+
+        .active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .active span:last-child {
+            transform: rotate(-45deg);
+        }
+
+        .active span:first-child {
+            transform: rotate(45deg);
+            top: 7px;
+        }
+
+        .menu {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: #4d3025;
+            top: 0;
+            left: 0;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: 0.5s;
+            transform: scale(0);
+            z-index: 100;
+
+            a {
+                color: #fff;
+            }
+        }
+
+        header nav .menu li {
+            padding-left: 0;
+        }
+
+        .show {
+            transform: scale(1);
+            padding: 0;
+        }
+
+        .menu li {
+            text-align: center;
+        }
+
+        .back {
+            display: block;
+        }
+
+        .menu li:first-child {
+            position: fixed;
+            top: 0;
+            right: 0;
+            padding: 0 10px 0 0;
+            font-size: 50px;
+        }
+
+        .menu a {
+            font-size: 40px;
+            line-height: 80px;
+        }
+
+        .container-header {
+            max-height: 275px;
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    header {
+        .header__contacts span {
+            display: none;
+        }
+
+        .menu {
+            a {
+                font-size: 30px;
+                line-height: 40px;
+            }
+        }
+    }
+}
+
+
+.main {
+    height: 800px;
+    background: url("../img/Rectangle3.jpg") center no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .main__logo {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #fff;
+        width: 300px;
+        height: 300px;
+
+        .main__logo-text {
+            color: #fff;
+
+            h1 {
+                font-size: 64px;
+                text-transform: uppercase;
+                font-family: 'Post No Bills Jaffna';
+                border-bottom: 1px solid #fff;
+            }
+
+            p {
+                margin-top: 5px;
+                font-size: 20px;
+                text-transform: uppercase;
+                font-family: 'PT Sans';
+            }
+        }
+
+
+    }
+
+    .main__tagline {
+        margin-top: 70px;
+        max-width: 760px;
+        text-align: center;
+        color: rgb(194, 189, 189);
+    }
+}
+
+.season {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+
+    .season__clock {
+        display: flex;
+        flex-direction: column;
+
+
+        .title {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 70px;
+            text-align: center;
+            font-size: 20px;
+            color: #fff;
+            font-family: 'Playfair Display', serif;
+
+            h2 span {
+                font-size: 36px;
+                font-family: 'Playfair Display', serif;
+                text-transform: uppercase;
+            }
+
+            div {
+                width: 70px;
+                height: 1px;
+                background-color: #fff;
+                margin-top: 30px;
+                margin-bottom: 40px;
+            }
+        }
+    }
+
+    .season__clock-model {
+        display: flex;
+        justify-content: center;
+
+        // -----------------карусель-------------------
+        .slide {
+            display: block;
+        }
+
+        .showing {
+            display: none;
+        }
+
+        // -------------------------
+    }
+
+    .catalog {
+        background: url('../img/Rectangle8.jpg');
+        height: 730px;
+        width: 880px;
+        margin-left: 110px;
+
+        .title {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 470px;
+            text-align: center;
+
+            h2 {
+                text-transform: uppercase;
+                font-size: 14px;
+                color: #fff;
+                font-size: 36px;
+                font-family: 'Playfair Display', serif;
+            }
+
+            div {
+                width: 70px;
+                height: 1px;
+                background-color: #fff;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            button {
+                width: 130px;
+                height: 40px;
+                border: 1px solid #fff;
+                background-color: transparent;
+                color: #fff;
+                text-transform: uppercase;
+                cursor: pointer;
+                font-size: 18px;
+            }
+        }
+    }
+
+}
+
+.season__clock-description {
+    display: flex;
+    flex-direction: column;
+
+
+    .clock {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #191B1C;
+        width: 260px;
+        height: 325px;
+        margin: 25px;
+
+        img {
+            width: 200px;
+            height: 230px;
+            cursor: pointer;
+        }
+    }
+
+    p {
+        padding-left: 25px;
+        color: #fff;
+        font-family: 'Playfair Display';
+    }
+}
+
+
+
+@media screen and (max-width: 1400px) {
+    .season {
+        margin: 0 auto;
+        flex-direction: column;
+
+        .catalog {
+            display: block;
+            margin: 0 auto;
+            margin: 100px 0;
+        }
+    }
+}
+
+@media screen and (max-width: 927px) {
+    .season {
+        // margin: 0 auto;
+
+        .catalog {
+            display: block;
+            max-width: 100%;
+            margin: 0 auto;
+            margin: 40px 0;
+        }
+
+        .season__clock-model {
+            flex-direction: column;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.collection2018 {
+    display: flex;
+    justify-content: center;
+
+    .collection2018__images {
+        background: url('../img/Rectangle9.jpg');
+        height: 600px;
+        width: 868px;
+        margin-right: 110px;
+    }
+
+    .collection2018__title {
+        display: flex;
+        // flex-direction: column;
+        justify-content: center;
+        width: 940px;
+
+        .title {
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 120px;
+            text-align: center;
+            color: #fff;
+
+            h2 {
+                font-size: 36px;
+                text-transform: uppercase;
+                font-family: 'Playfair Display', serif;
+                padding-top: 90px;
+            }
+
+            span {
+                font-size: 28px;
+            }
+
+            div {
+                width: 70px;
+                height: 1px;
+                background-color: #fff;
+                margin-top: 30px;
+                margin-bottom: 40px;
+            }
+
+            button {
+                margin-top: 40px;
+                width: 270px;
+                height: 50px;
+                border: 1px solid #fff;
+                background-color: transparent;
+                color: #fff;
+                text-transform: uppercase;
+                cursor: pointer;
+                font-family: "PT Sans";
+                font-size: 18px;
+            }
+
+        }
+
+    }
+
+}
+
+
+
+@media screen and (max-width: 1400px) {
+
+    .collection2018 {
+        margin: 0 auto;
+        flex-direction: column-reverse;
+
+        .collection2018__images {
+            // max-width: 880px;
+            margin: 0 auto;
+        }
+
+        .collection2018__title {
+            justify-content: center;
+            max-width: 540px;
+            margin: 0 auto;
+            padding-top: 80px;
+        }
+    }
+}
+
+@media screen and (max-width: 927px) {
+
+    .collection2018 {
+        .collection2018__images {
+            display: none;
+        }
+
+        .collection2018__title {
+            max-width: 360px;
+        }
+    }
+}
+
+
+.newItems {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 70px;
+        text-align: center;
+        font-size: 14px;
+        color: #fff;
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            text-transform: uppercase;
+        }
+
+        div {
+            width: 70px;
+            height: 1px;
+            background-color: #fff;
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+    }
+
+    .newItems__clock {
+        max-width: 1225px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        padding-bottom: 80px;
+
+        .season__clock-description {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .clock {
+                display: flex;
+                align-items: center;
+                background-color: #191B1C;
+                justify-content: center;
+                width: 260px;
+                height: 325px;
+                margin: 23px;
+            }
+
+            p {
+                padding-left: 25px;
+                font-family: 'Playfair Display';
+                color: #fff;
+            }
+        }
+    }
+
+    button {
+        background: #585858;
+        color: #fff;
+        margin-top: 10px;
+        margin-right: 10px;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        margin-bottom: 30px;
+
+        &:hover {
+            background: #272727;
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 905px) {
+    .newItems {
+        .newItems__clock {
+            justify-content: center;
+        }
+    }
+}
+
+@media screen and (max-width: 660px) {
+
+    .newItems {
+        .newItems__clock {
+            justify-content: center;
+        }
+    }
+}
+
+
+
+
+.brends {
+    background: #202020;
+    display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    flex-direction: column;
+
+    text-align: center;
+
+    .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 70px;
+        text-align: center;
+        font-size: 14px;
+        color: #fff;
+
+        h2 {
+            font-size: 24px;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+
+        div {
+            width: 70px;
+            height: 1px;
+            background-color: #fff;
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+    }
+
+    .brens__name {
+        padding-bottom: 50px;
+
+        img {
+            margin: 0 30px;
+
+        }
+
+    }
+}
+
+.description {
+    display: flex;
+    justify-content: center;
+    background: url('../img/Rectangle15.jpg') no-repeat center;
+
+    .description__shop,
+    .description__category,
+    .description__mailing {
+        padding: 60px 20px;
+        display: flex;
+        flex-direction: column;
+        max-width: 405px;
+
+        h3 {
+            font-size: 24px;
+            text-transform: uppercase;
+            color: #fff;
+            padding-bottom: 40px;
+            font-family: 'PT Sans';
+        }
+    }
+
+    .description__list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+
+        button {
+            background: #0F0F0F;
+            color: #fff;
+            margin-top: 10px;
+            margin-right: 10px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            outline: none;
+
+            &:hover {
+                background: #3b3b3b;
+            }
+        }
+    }
+
+    .description__mailing-email {
+        background: rgba(255, 255, 255, 0.4);
+        margin-top: 37px;
+        width: 190px;
+        height: 42px;
+        outline: none;
+        color: #fff;
+
+        &::placeholder {
+            color: rgb(218, 216, 216);
+            padding-left: 20px;
+        }
+    }
+
+    .description__mailing-button {
+        width: 150px;
+        height: 42px;
+        background: #0F0F0F;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        font-size: 14px;
+        font-family: "PT Sans";
+        text-transform: uppercase;
+
+        &:hover {
+            background-color: #fff;
+            color: #000;
+        }
+    }
+}
+
+
+footer {
+    display: flex;
+    justify-content: center;
+
+    h6 {
+        color: #D0D0D0;
+        font-family: "PT Sans";
+        font-size: 12px;
+        margin: 12px;
+    }
+}
+
+@media screen and (max-width: 905px) {
+    .description {
+
+        .description__shop,
+        .description__category,
+        .description__mailing {
+            padding: 30px 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .description {
+        display: flex;
+        flex-direction: column;
+
+        .description__shop,
+        .description__category,
+        .description__mailing {
+            padding: 30px 20px;
+        }
+    }
+}

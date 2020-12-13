@@ -1,0 +1,159 @@
+.modalClockDescription {
+    display: none;
+    position: fixed;
+    z-index: 199;
+    background-color: rgba(22, 21, 21, .7);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+}
+
+.modalClockDescriptionBlock {
+    display: flex;
+}
+
+.modalClockDescription .modalClock {
+    position: fixed;
+    z-index: 200;
+    left: 50%;
+    margin-left: -380px;
+    top: 50%;
+    margin-top: -300px;
+    border-radius: 10px;
+    width: 800px;
+    height: 600px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 20px #c7c6c6;
+    box-shadow: 0 0 20px #c7c6c6
+}
+
+.modalClockDescription .modalClock .crossLeft,
+.modalClockDescription .modalClock .crossRight {
+    position: absolute;
+    top: 0px;
+    height: 32px;
+    width: 3px;
+    background-color: #969494;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-radius: 10%
+}
+
+.modalClockDescription .modalClock p {
+    margin-top: 25px;
+    text-transform: uppercase;
+    color: #020202;
+    padding-left: 30px;
+    font-size: 18px;
+
+    &:nth-child(3) {
+        margin-top: 20px;
+    }
+
+    &:nth-child(5) {
+        margin-top: 5px;
+    }
+}
+
+.modal .modalClock .crossRight,
+.modalClockDescription .modalClock .crossRight {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg)
+}
+
+.modalClockDescription .modalClock .modalClockDescriptionBlock p {
+    font-size: 26px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 30px;
+    color: #000;
+}
+
+.modalClockDescription__description,
+.modalClockDescription__characteristic,
+.modalClockDescription__price {
+    padding: 20px 30px 20px;
+    color: rgb(44, 44, 44);
+}
+
+.modalClockDescription .exit {
+    width: 30px;
+    height: 30px;
+    margin: 10px 30px 30px 190px;
+    position: relative;
+    top: 25px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: 0;
+
+}
+
+.modal .modalClock .enterButton,
+.modalClockDescription .modalClock .enterButton {
+    position: absolute;
+    bottom: 20px;
+    width: 225px;
+    height: 60px;
+    background-color: #e45a50;
+    color: #fff;
+    font-size: 22px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 540px;
+    outline: 0;
+}
+
+.modalClockDescription .modalClock .enterButton:hover {
+    background-color: #c83a2f;
+}
+
+.modalClockDescription__img img {
+    width: 90px;
+    height: 110px;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.modalClockDescription__price {
+    font-size: 28px;
+}
+
+
+
+@media screen and (max-width: 670px) {
+
+    .modalClockDescription .modalClock {
+        position: fixed;
+        z-index: 200;
+        left: 50%;
+        margin-left: -180px;
+        top: 50%;
+        // margin-top: -10px;
+        border-radius: 3px;
+        width: 400px;
+        max-height: 600px;
+    }
+
+
+    .modalClockDescription .exit {
+        width: 30px;
+        height: 30px;
+        margin: 10px 30px 30px 60px;
+    }
+
+    .modal .modalClock .enterButton,
+    .modalClockDescription .modalClock .enterButton {
+        position: absolute;
+        bottom: 20px;
+        max-width: 225px;
+        height: 60px;
+        margin-left: 10%;
+    }
+
+
+}

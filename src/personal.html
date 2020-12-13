@@ -1,0 +1,69 @@
+@@include('components/page/_1_head.html')
+
+<body>
+	@@include('components/page/_2_header.html')
+	<!-- @@include('components/page/_5_registration.html')
+	@@include('components/page/_6_mailing.html') -->
+
+
+    <section class="personal">
+        <form action="#" class="formPersonal">
+            <div class="peronal__correct">
+                <div class="personal__title">Личные данные</div>
+                <button class="personalData__button">Редактировать</button>
+            </div>
+            <div class="personalData">
+                <!-- <div class="personal__logo"><img src="" alt=""></div> -->
+                <div class="personalData__name">
+                    <p>Имя</p>
+                    <p class="personalData__name-p"><input type="text" value="Иван" disabled="disabled"></p>
+                </div>
+                <div class="personalData__surname">
+                    <p>Фамилия</p>
+                    <p class="personalData__surname-p"><input type="text" value="Сергеев" disabled></p>
+                </div>
+                <div class="personalData__birthday">
+                    <p>День рождения</p>
+                    <p class="personalData__birthday-p"><input type="text" value="01.12.1939" disabled></p>
+                </div>
+                <div class="personalData__birthday">
+                    <p>Электронная почта</p>
+                    <p class="personalData__birthday-p"><input type="email" value="test@mail.ru" disabled></p>
+                </div>
+            </div>
+            <div class="peronal__correct">
+                <div class="personal__title">Контактные данные</div>
+            </div>
+            <div class="contacts">
+                <div class="contacts__telephon">
+                    <p>Подтвержденный телефон</p>
+                    <p><input type="text" value="+3807034567890" disabled></p>
+                </div>
+                <div class="contacts__emailAdress">
+                    <p>Дополнительный телефон</p>
+                    <p><input type="text" value="+3807034111890" disabled></p>
+                </div>
+                <div class="contacts__emailAdress">
+                    <p>Электронная почта</p>
+                    <p><input type="email" value="test@mail.ru" disabled></p>
+                </div>
+            </div>
+            <div class="peronal__correct">
+                <div class="personal__title">Данные про доставку товара</div>
+            </div>
+            <div class="adressCourier">
+                <div>
+                    <p>Адресс доставки</p>
+                    <p><input type="placeholder" value="Украина, Донецкая обл., г. Мариуполь, ул. Мира, дом 15, кв. 34"
+                            disabled>
+                    </p>
+                </div>
+            </div>
+            <button class="personalSaveData__button">Сохранить изменения</button>
+        </form>
+    </section>
+    @@include('components/page/_3_footer.html')
+    @@include('components/page/_4_scripts.html')
+</body>
+
+</html>
